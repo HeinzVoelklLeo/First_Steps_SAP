@@ -4,60 +4,123 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Klassen im Paket /LEOYM/DISPO</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    body{font-family:Segoe UI,Arial,Helvetica,sans-serif;margin:24px;color:#222}
-    h1{font-size:1.4rem}
-    table{border-collapse:collapse;width:100%;margin-top:16px}
-    th,td{border:1px solid #ddd;padding:8px;text-align:left}
-    th{background:#f4f4f4}
-    .category{background:#f9f9fb;font-weight:600}
+    :root{--leo-blue:#39769F;--leo-deep:#172436;--leo-yellow:#EFD100;--leo-grey:#727272}
+    html,body{height:100%;margin:0}
+    body{font-family:Roboto,Segoe UI,Arial,Helvetica,sans-serif;color:var(--leo-deep);background:#fff}
+    header{background:linear-gradient(180deg,#f7fbfe,white);border-bottom:1px solid #eee}
+    .container{max-width:980px;margin:0 auto;padding:24px}
+    .hero{display:flex;align-items:center;gap:16px;padding:18px 0}
+    .logo{width:92px;height:64px;background:var(--leo-blue);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;border-radius:6px}
+    .hero h1{font-family:Raleway,Roboto,serif;color:var(--leo-deep);margin:0;font-size:1.6rem}
+    .hero p{margin:6px 0 0;color:var(--leo-grey)}
+    nav{margin-top:12px}
+    nav a{color:var(--leo-blue);text-decoration:none;margin-right:12px;font-weight:500}
+    main{padding:18px 0}
+    section{margin-bottom:18px}
+    h2{font-family:Raleway,Roboto,serif;color:var(--leo-blue);margin:0 0 8px;font-size:1.1rem}
+    table{border-collapse:collapse;width:100%;margin-top:12px;font-size:0.95rem}
+    th,td{border:1px solid #e6eef4;padding:10px;text-align:left}
+    th{background:#f1f6fa;color:var(--leo-deep)}
+    .category-cell{background:#fbfdff;font-weight:700;color:var(--leo-deep);width:1px;white-space:nowrap}
+    footer{border-top:1px solid #eee;padding:14px 0;color:var(--leo-grey);font-size:0.9rem}
+    @media (max-width:700px){.hero{flex-direction:column;align-items:flex-start}.logo{width:64px;height:44px}}
   </style>
 </head>
 <body>
-  <h1>ABAP-Klassen im Paket /LEOYM/DISPO (System LD3-200)</h1>
-  <p>Diese Seite listet die Klassen nach Kategorie auf.</p>
+  <header>
+    <div class="container">
+      <div class="hero">
+        <div class="logo" aria-hidden="true">Leo</div>
+        <div>
+          <h1>ABAP-Klassen im Paket <small style="font-weight:400;color:var(--leo-grey)">/LEOYM/DISPO</small></h1>
+          <p>Übersicht der Klassen (System LD3-200) — kategorisiert für schnelle Orientierung.</p>
+        </div>
+      </div>
+      <nav aria-label="Seitennavigation">
+        <a href="#badi">BADi</a>
+        <a href="#core">Kern-Dispo</a>
+        <a href="#section">Sektion &amp; Release</a>
+        <a href="#service">Service</a>
+        <a href="#dpr">DPR &amp; Exceptions</a>
+      </nav>
+    </div>
+  </header>
 
-  <table>
-    <thead>
-      <tr><th>Kategorie</th><th>Klassenname</th><th>Kurzbeschreibung</th></tr>
-    </thead>
-    <tbody>
-      <tr class="category"><td rowspan="3">BADi-Implementierungen</td>
-        <td>/LEOYM/CL_BADI_DISPO_TRAININ</td><td>Traineinfahrt</td></tr>
-      <tr><td>/LEOYM/CL_BADI_DISPO_TRAINOUT</td><td>Trainausfahrt</td></tr>
-      <tr><td>/LEOYM/CL_BADI_DISPO_TRO_VEH</td><td>Transportfahrzeug</td></tr>
+  <main class="container">
+    <section id="badi">
+      <h2>BADi-Implementierungen</h2>
+      <table>
+        <thead><tr><th>Klassenname</th><th>Kurzbeschreibung</th></tr></thead>
+        <tbody>
+          <tr><td>/LEOYM/CL_BADI_DISPO_TRAININ</td><td>Traineinfahrt</td></tr>
+          <tr><td>/LEOYM/CL_BADI_DISPO_TRAINOUT</td><td>Trainausfahrt</td></tr>
+          <tr><td>/LEOYM/CL_BADI_DISPO_TRO_VEH</td><td>Transportfahrzeug</td></tr>
+        </tbody>
+      </table>
+    </section>
 
-      <tr class="category"><td rowspan="6">Kern-Dispositionsklassen</td>
-        <td>/LEOYM/CL_DISPO_DISPLFLD_BASE</td><td>Basis</td></tr>
-      <tr><td>/LEOYM/CL_DISPO_DISPLFLD_CONT</td><td>Container</td></tr>
-      <tr><td>/LEOYM/CL_DISPO_DISPLFLD_VEH</td><td>Fahrzeug</td></tr>
-      <tr><td>/LEOYM/CL_DISPO_HANDLER</td><td>Ereignishandler</td></tr>
-      <tr><td>/LEOYM/CL_DISPO_HELPER</td><td>Utilities</td></tr>
-      <tr><td>/LEOYM/CL_DISPO_MANAGER</td><td>Orchestrator</td></tr>
+    <section id="core">
+      <h2>Kern-Dispositionsklassen</h2>
+      <table>
+        <thead><tr><th>Klassenname</th><th>Kurzbeschreibung</th></tr></thead>
+        <tbody>
+          <tr><td>/LEOYM/CL_DISPO_DISPLFLD_BASE</td><td>Basis</td></tr>
+          <tr><td>/LEOYM/CL_DISPO_DISPLFLD_CONT</td><td>Container</td></tr>
+          <tr><td>/LEOYM/CL_DISPO_DISPLFLD_VEH</td><td>Fahrzeug</td></tr>
+          <tr><td>/LEOYM/CL_DISPO_HANDLER</td><td>Ereignishandler</td></tr>
+          <tr><td>/LEOYM/CL_DISPO_HELPER</td><td>Utilities</td></tr>
+          <tr><td>/LEOYM/CL_DISPO_MANAGER</td><td>Orchestrator</td></tr>
+        </tbody>
+      </table>
+    </section>
 
-      <tr class="category"><td rowspan="4">Sektion &amp; Release</td>
-        <td>/LEOYM/CL_DISPO_RELEASE</td><td>Release-Verwaltung</td></tr>
-      <tr><td>/LEOYM/CL_DISPO_SECTION</td><td>Basis</td></tr>
-      <tr><td>/LEOYM/CL_DISPO_SECTION_21</td><td>Typ 21</td></tr>
-      <tr><td>/LEOYM/CL_DISPO_SECTION_22</td><td>Typ 22</td></tr>
+    <section id="section">
+      <h2>Sektion &amp; Release</h2>
+      <table>
+        <thead><tr><th>Klassenname</th><th>Kurzbeschreibung</th></tr></thead>
+        <tbody>
+          <tr><td>/LEOYM/CL_DISPO_RELEASE</td><td>Release-Verwaltung</td></tr>
+          <tr><td>/LEOYM/CL_DISPO_SECTION</td><td>Basis</td></tr>
+          <tr><td>/LEOYM/CL_DISPO_SECTION_21</td><td>Typ 21</td></tr>
+          <tr><td>/LEOYM/CL_DISPO_SECTION_22</td><td>Typ 22</td></tr>
+        </tbody>
+      </table>
+    </section>
 
-      <tr class="category"><td rowspan="8">Service-Klassen</td>
-        <td>/LEOYM/CL_DISPO_SERVICE</td><td>Basis</td></tr>
-      <tr><td>/LEOYM/CL_DISPO_SERV_CONT</td><td>Container</td></tr>
-      <tr><td>/LEOYM/CL_DISPO_SERV_TRAINCHK</td><td>Trainprüfung</td></tr>
-      <tr><td>/LEOYM/CL_DISPO_SERV_TRAININ</td><td>Traineinfahrt</td></tr>
-      <tr><td>/LEOYM/CL_DISPO_SERV_TRUCK</td><td>Lastwagen</td></tr>
-      <tr><td>/LEOYM/CL_DISP_SRV_TRAININ_V1</td><td>Traineinfahrt v1</td></tr>
-      <tr><td>/LEOYM/CL_DISP_SRV_TRAINOUT_V1</td><td>Trainausfahrt v1</td></tr>
-      <tr><td>/LEOYM/CL_DISP_SRV_TRAIN_V1</td><td>Train v1</td></tr>
+    <section id="service">
+      <h2>Service-Klassen</h2>
+      <table>
+        <thead><tr><th>Klassenname</th><th>Kurzbeschreibung</th></tr></thead>
+        <tbody>
+          <tr><td>/LEOYM/CL_DISPO_SERVICE</td><td>Basis</td></tr>
+          <tr><td>/LEOYM/CL_DISPO_SERV_CONT</td><td>Container</td></tr>
+          <tr><td>/LEOYM/CL_DISPO_SERV_TRAINCHK</td><td>Trainprüfung</td></tr>
+          <tr><td>/LEOYM/CL_DISPO_SERV_TRAININ</td><td>Traineinfahrt</td></tr>
+          <tr><td>/LEOYM/CL_DISPO_SERV_TRUCK</td><td>Lastwagen</td></tr>
+          <tr><td>/LEOYM/CL_DISP_SRV_TRAININ_V1</td><td>Traineinfahrt v1</td></tr>
+          <tr><td>/LEOYM/CL_DISP_SRV_TRAINOUT_V1</td><td>Trainausfahrt v1</td></tr>
+          <tr><td>/LEOYM/CL_DISP_SRV_TRAIN_V1</td><td>Train v1</td></tr>
+        </tbody>
+      </table>
+    </section>
 
-      <tr class="category"><td rowspan="3">DPR &amp; Exception</td>
-        <td>/LEOYM/CL_DPR</td><td>DPR-Verwaltung</td></tr>
-      <tr><td>/LEOYM/CL_DPRIT</td><td>DPR-IT Schnittstelle</td></tr>
-      <tr><td>/LEOYM/CX_DISPO</td><td>Exception-Klasse</td></tr>
-    </tbody>
-  </table>
+    <section id="dpr">
+      <h2>DPR &amp; Exception</h2>
+      <table>
+        <thead><tr><th>Klassenname</th><th>Kurzbeschreibung</th></tr></thead>
+        <tbody>
+          <tr><td>/LEOYM/CL_DPR</td><td>DPR-Verwaltung</td></tr>
+          <tr><td>/LEOYM/CL_DPRIT</td><td>DPR-IT Schnittstelle</td></tr>
+          <tr><td>/LEOYM/CX_DISPO</td><td>Exception-Klasse</td></tr>
+        </tbody>
+      </table>
+    </section>
 
-  <footer style="margin-top:20px;color:#666;font-size:0.9rem">Erstellt aus der Klassenliste des Pakets /LEOYM/DISPO (LD3-200).</footer>
+    <footer>
+      <div>Erstellt aus der Klassenliste des Pakets /LEOYM/DISPO (LD3-200).</div>
+    </footer>
+  </main>
 </body>
 </html>
