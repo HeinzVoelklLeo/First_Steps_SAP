@@ -1,0 +1,82 @@
+{
+  "inputs": [
+   {
+     "type": "promptString",
+     "id": "arc1-sap-user",
+     "description": "SAP user for arc-1"
+   },
+   {
+     "type": "promptString",
+     "id": "arc1-sap-password",
+     "description": "SAP password for arc-1",
+     "password": true
+   }
+ ],
+  "servers": {
+   "sap-cap": {
+     "type": "stdio",
+     "command": "npx",
+     "args": ["-y", "@cap-js/mcp-server"],
+     "env": {}
+   },
+   "sap-ux-fiori": {
+     "type": "stdio",
+     "command": "npx",
+     "args": ["-y", "@sap-ux/fiori-mcp-server"],
+     "env": {}
+   },
+   "ui5": {
+     "type": "stdio",
+     "command": "npx",
+     "args": ["-y", "@ui5/mcp-server"],
+     "env": {}
+   },
+  "ARC1-S4A": {
+     "tools": [
+       "*"
+     ],
+     "type": "stdio",
+     "command": "npx",
+     "args": [
+       "-y",
+       "arc-1@latest"
+     ],
+     "env": {
+       "SAP_URL": "http://saps4a-lsv.hd.leogistics.corp:8000",
+       "SAP_USER": "your-user",
+       "SAP_PASSWORD": "your-pw",
+       "SAP_CLIENT": "100",
+       "SAP_LANGUAGE": "EN",
+       "SAP_TRANSPORT": "stdio",
+       "SAP_ALLOW_WRITES": "true",
+       "SAP_ALLOWED_PACKAGES": "$TMP,Z*,/LEOTL*,/LEOWM*,/LEOSB*,/LEOYM*",
+       "SAP_ALLOW_DATA_PREVIEW": "true",
+       "SAP_ALLOW_FREE_SQL": "true",
+       "SAP_ALLOW_TRANSPORT_WRITES": "true",
+       "SAP_ALLOW_GIT_WRITES": "false",
+       "SAP_FEATURE_ABAPGIT": "off",
+       "SAP_FEATURE_GCTS": "off",
+       "SAP_FEATURE_RAP": "on",
+       "SAP_FEATURE_AMDP": "on",
+       "SAP_FEATURE_UI5": "on",
+       "SAP_FEATURE_TRANSPORT": "on",
+       "SAP_FEATURE_HANA": "on",
+       "SAP_FEATURE_UI5REPO": "on",
+       "SAP_FEATURE_FLP": "on",
+       "SAP_SYSTEM_TYPE": "onprem",
+       "ARC1_CACHE": "auto",
+       "ARC1_CACHE_FILE": ".arc1-cache.db",
+       "ARC1_CACHE_WARMUP": "false",
+       "ARC1_CACHE_WARMUP_PACKAGES": "Z*,Y*,/LEOTL*,/LEOWM*",
+       "SAP_ABAPLINT_CONFIG": "./abaplint.jsonc",
+       "SAP_LINT_BEFORE_WRITE": "true",
+       "ARC1_LOG_LEVEL": "info",
+       "ARC1_LOG_FORMAT": "text",
+       "ARC1_MAX_CONCURRENT": "10",
+       "ARC1_TOOL_MODE": "standard",
+       "SAP_VERBOSE": "false",
+       "ARC1_LOG_HTTP_DEBUG": "false"
+     }
+   }
+ }
+}
